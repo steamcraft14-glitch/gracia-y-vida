@@ -212,6 +212,13 @@
       width: 100%;
       overflow: hidden;
       border-radius: var(--radio-card);
+      touch-action: pan-y;
+      user-select: none;
+      cursor: grab;
+    }
+
+    .carousel-wrapper.grabbing {
+      cursor: grabbing;
     }
 
     .carousel-slide {
@@ -224,7 +231,7 @@
       position: absolute;
       opacity: 0;
       transform: translateX(100%);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
       pointer-events: none;
     }
 
@@ -233,6 +240,10 @@
       opacity: 1;
       transform: translateX(0);
       pointer-events: auto;
+    }
+
+    .carousel-slide.prev {
+      transform: translateX(-100%);
     }
 
     .slide-evento {
@@ -915,18 +926,32 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // ===== CARRUSEL ROTATIVO =====
+    // ===== CARRUSEL ROTATIVO MEJORADO =====
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    
     let currentSlide = 0;
     let autoRotateInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
 
     function showSlide(n) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev');
+        if (index === n) {
+          slide.classList.add('active');
+        } else if (index < n) {
+          slide.classList.add('prev');
+        }
+      });
       
-      slides[n].classList.add('active');
-      dots[n].classList.add('active');
+      dots.forEach((dot, index) => {
+        dot.classList.remove('active');
+        if (index === n) dot.classList.add('active');
+      });
+      
       currentSlide = n;
     }
 
@@ -934,9 +959,13 @@
       showSlide((currentSlide + 1) % slides.length);
     }
 
-    // Auto-rotate cada 5 segundos
+    function prevSlide() {
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+
+    // Auto-rotate cada 7 segundos (más lento)
     function startAutoRotate() {
-      autoRotateInterval = setInterval(nextSlide, 5000);
+      autoRotateInterval = setInterval(nextSlide, 7000);
     }
 
     function stopAutoRotate() {
@@ -952,10 +981,60 @@
       });
     });
 
-    // Pausar al pasar mouse y reanudar
-    const carouselContainer = document.querySelector('.carousel-container');
-    carouselContainer.addEventListener('mouseenter', stopAutoRotate);
-    carouselContainer.addEventListener('mouseleave', startAutoRotate);
+    // Touch/Swipe para móvil
+    carouselWrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      isDragging = true;
+      stopAutoRotate();
+    }, false);
+
+    carouselWrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      isDragging = false;
+      handleSwipe();
+      startAutoRotate();
+    }, false);
+
+    // Mouse drag para desktop (opcional)
+    carouselWrapper.addEventListener('mousedown', (e) => {
+      touchStartX = e.screenX;
+      isDragging = true;
+      stopAutoRotate();
+      carouselWrapper.classList.add('grabbing');
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (isDragging) {
+        isDragging = false;
+        carouselWrapper.classList.remove('grabbing');
+        startAutoRotate();
+      }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging && Math.abs(e.screenX - touchStartX) > 10) {
+        touchEndX = e.screenX;
+      }
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swipe izquierda → siguiente slide
+          nextSlide();
+        } else {
+          // Swipe derecha → slide anterior
+          prevSlide();
+        }
+      }
+    }
+
+    // Pausar al pasar mouse (desktop)
+    carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
+    carouselWrapper.addEventListener('mouseleave', startAutoRotate);
 
     // Iniciar
     showSlide(0);
