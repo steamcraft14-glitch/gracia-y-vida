@@ -141,10 +141,10 @@
 
     @keyframes pulso {
       0%, 100% { transform: scale(1);   filter: drop-shadow(0 0 8px rgba(37,99,235,0.4)); }
-      50%       { transform: scale(1.05); filter: drop-shadow(0 0 18px rgba(59,130,246,0.7)); }
+      50%        { transform: scale(1.05); filter: drop-shadow(0 0 18px rgba(59,130,246,0.7)); }
     }
 
-    .logo-cruz svg {
+    .logo-cruz svg, .logo-cruz img {
       width: 100%;
       height: 100%;
     }
@@ -376,10 +376,6 @@
 
     .carousel-slide.prev {
       transform: translateX(-100%);
-    }
-
-    .slide-evento {
-      /* Usar estilos de evento destacado */
     }
 
     .slide-evento.active {
@@ -898,14 +894,10 @@
 <div class="contenedor">
 
   <!-- =============================================
-       CABECERA — edita nombre e iglesia aquí
+       CABECERA
   ============================================= -->
   <header class="cabecera">
     <div class="logo-cruz">
-      <!-- 
-        LOGO: guarda tu imagen como "logo.png" en la misma carpeta que este index.html
-        y aparecerá automáticamente aquí.
-      -->
       <img src="logo.png" alt="Logo Gracia & Vida" style="width:100%; height:100%; object-fit:contain;" />
     </div>
 
@@ -922,12 +914,12 @@
   <div class="carousel-container">
     <div class="carousel-wrapper">
       
-      <!-- SLIDE 1: EVENTO DESTACADO -->
+      <!-- SLIDE 1: EVENTO DESTACADO (AQUÍ ESTÁN LOS IDs QUE CONECTAN A FIREBASE) -->
       <div class="carousel-slide slide-evento">
         <span class="evento-badge">⚡ Próximo evento</span>
-        <h2 class="evento-titulo">Casa de Oración</h2>
-        <p class="evento-fecha">5 de Septiembre · 10:00 - 22:00</p>
-        <p class="evento-descripcion">Un día completo de intercesión, adoración y búsqueda de Dios. 6 bloques temáticos con propósito espiritual.</p>
+        <h2 class="evento-titulo" id="evt-titulo">Cargando evento...</h2>
+        <p class="evento-fecha" id="evt-fecha">...</p>
+        <p class="evento-descripcion" id="evt-desc">...</p>
         
         <div class="evento-bloques">
           <div class="bloque-item">
@@ -1052,16 +1044,12 @@
 
   <!-- =============================================
        LINKS PRINCIPALES
-       Para agregar uno nuevo, copia un bloque <a class="link-card">
-       y pega debajo del último. Cambia el href, icono, nombre y desc.
   ============================================= -->
   <p class="seccion-titulo">Comunidad</p>
 
   <div class="links-lista">
-
     <a class="link-card" href="https://www.youtube.com/@GRACIA_Y_VIDA_HUECHURABA" target="_blank" rel="noopener">
       <div class="icono-wrap ic-youtube">
-        <!-- YouTube icon SVG -->
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/>
         </svg>
@@ -1111,14 +1099,11 @@
       </div>
       <span class="link-flecha">→</span>
     </a>
-
   </div>
 
   <!-- Sección Jóvenes -->
   <p class="seccion-titulo">Jóvenes</p>
-
   <div class="links-lista">
-
     <a class="link-card" href="https://www.instagram.com/gj.graciayvida?igsh=MXZrMWhobDBpbnVobQ==" target="_blank" rel="noopener">
       <div class="icono-wrap ic-jovenes">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -1131,14 +1116,11 @@
       </div>
       <span class="link-flecha">→</span>
     </a>
-
   </div>
 
   <!-- Sección Nuevos en la iglesia -->
   <p class="seccion-titulo">Primeros pasos</p>
-
   <div class="links-lista">
-
     <a class="link-card" href="https://form.jotform.com/261258061202648" target="_blank" rel="noopener">
       <div class="icono-wrap ic-nuevo">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -1151,14 +1133,11 @@
       </div>
       <span class="link-flecha">→</span>
     </a>
-
   </div>
 
   <!-- Sección Oración -->
   <p class="seccion-titulo">Intercesión</p>
-
   <div class="links-lista">
-
     <a class="link-card" href="https://docs.google.com/forms/d/1UCP_1vgFgGMFL2QSnV1nhkYwYe7S9mEPgV4MDkt9waY/viewform?edit_requested=true#responses" target="_blank" rel="noopener">
       <div class="icono-wrap ic-oracion">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -1171,13 +1150,10 @@
       </div>
       <span class="link-flecha">→</span>
     </a>
-
   </div>
 
   <!-- Sección Apoya la obra -->
-
   <div class="links-lista">
-
     <a class="link-card" href="https://fintoc.me/gyvhuechuraba" target="_blank" rel="noopener">
       <div class="icono-wrap ic-ofrenda">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -1190,14 +1166,11 @@
       </div>
       <span class="link-flecha">→</span>
     </a>
-
   </div>
 
   <!-- Sección YouVersion -->
   <p class="seccion-titulo">Biblia & Estudio</p>
-
   <div class="links-lista">
-
     <a class="link-card" href="https://www.bible.com/organizations/706bf395-5e04-4e0c-b4c3-69cebb35e56a?utm_source=yvapp&utm_medium=share&utm_content=partner-profile" target="_blank" rel="noopener">
       <div class="icono-wrap ic-youversion">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -1210,11 +1183,10 @@
       </div>
       <span class="link-flecha">→</span>
     </a>
-
   </div>
 
   <!-- =============================================
-       PIE DE PÁGINA — edita el texto aquí
+       PIE DE PÁGINA
   ============================================= -->
   <footer class="pie">
     <p>Iglesia Gracia & Vida · Huechuraba, Santiago</p>
@@ -1223,11 +1195,10 @@
 
 </div>
 
-  <script>
+<!-- SCRIPT ORIGINAL (Carrusel y resaltar días) -->
+<script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Scroll al top al cargar
     window.scrollTo(0, 0);
-    // ===== CARRUSEL ROTATIVO MEJORADO =====
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
     const carouselWrapper = document.querySelector('.carousel-wrapper');
@@ -1265,7 +1236,6 @@
       showSlide((currentSlide - 1 + slides.length) % slides.length);
     }
 
-    // Auto-rotate cada 7 segundos (solo en móvil)
     function startAutoRotate() {
       if (!isMobile) return;
       autoRotateInterval = setInterval(nextSlide, 7000);
@@ -1275,7 +1245,6 @@
       clearInterval(autoRotateInterval);
     }
 
-    // Event listeners para dots (solo en móvil)
     if (isMobile) {
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
@@ -1286,7 +1255,6 @@
       });
     }
 
-    // Touch/Swipe para móvil SOLO
     if (isMobile) {
       let lastScrollTime = 0;
 
@@ -1297,10 +1265,6 @@
         lastScrollTime = Date.now();
       }, { passive: true });
 
-      carouselWrapper.addEventListener('touchmove', (e) => {
-        // No prevenir por defecto, dejar que scroll natural funcione
-      }, { passive: true });
-
       carouselWrapper.addEventListener('touchend', (e) => {
         const touchEndXVal = e.changedTouches[0].clientX;
         isDragging = false;
@@ -1309,7 +1273,6 @@
         const swipeThreshold = 50;
         const timeDiff = Date.now() - lastScrollTime;
 
-        // Solo registrar swipe si se hizo rápido y distancia suficiente
         if (Math.abs(diff) > swipeThreshold && timeDiff < 500) {
           e.preventDefault();
           if (diff > 0) {
@@ -1322,34 +1285,23 @@
         startAutoRotate();
       }, { passive: false });
 
-      // Pausar al pasar mouse (móvil con touch)
       carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
       carouselWrapper.addEventListener('mouseleave', startAutoRotate);
     }
 
-    // Iniciar (solo en móvil)
     if (isMobile) {
       showSlide(0);
       startAutoRotate();
     } else {
-      // Desktop: mostrar ambos slides
       slides.forEach(slide => {
         slide.classList.add('active');
       });
       dots.forEach(dot => dot.style.display = 'none');
     }
 
-
-
-    // ===== DESTACAR DÍA ACTUAL EN REUNIONES =====
     const dayMap = {
-      0: 'domingo',
-      1: 'lunes',
-      2: 'martes',
-      3: 'miércoles',
-      4: 'jueves',
-      5: 'viernes',
-      6: 'sábado'
+      0: 'domingo', 1: 'lunes', 2: 'martes', 3: 'miércoles',
+      4: 'jueves', 5: 'viernes', 6: 'sábado'
     };
     
     const today = new Date().getDay();
@@ -1361,10 +1313,7 @@
       const rowDay = row.getAttribute('data-day');
       
       const normalizeText = (text) => {
-        return text
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '');
+        return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       };
       
       if (normalizeText(rowDay) === normalizeText(todayName)) {
@@ -1376,6 +1325,39 @@
         }
       }
     });
+  });
+</script>
+
+<!-- SCRIPT NUEVO: CONEXIÓN A FIREBASE -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDIibIy0oBXya6jQLLmtzq2TFB-Jiaa1_o",
+    authDomain: "gracia-vida.firebaseapp.com",
+    projectId: "gracia-vida",
+    storageBucket: "gracia-vida.firebasestorage.app",
+    messagingSenderId: "901432766248",
+    appId: "1:901432766248:web:8dcbb7048284c152ae2a1d"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // 'onSnapshot' escucha los cambios en tiempo real
+  const eventoRef = doc(db, "iglesia", "evento_destacado");
+  
+  onSnapshot(eventoRef, (docSnap) => {
+    if (docSnap.exists()) {
+      const datos = docSnap.data();
+      // Actualiza los textos con lo que venga de la base de datos
+      if(datos.titulo) document.getElementById('evt-titulo').textContent = datos.titulo;
+      if(datos.fecha) document.getElementById('evt-fecha').textContent = datos.fecha;
+      if(datos.descripcion) document.getElementById('evt-desc').textContent = datos.descripcion;
+    }
+  }, (error) => {
+    console.error("Error al obtener los datos del evento: ", error);
   });
 </script>
 
