@@ -764,4 +764,737 @@
 
     .link-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(59,130,246,0.3), 0 4px 12
+      box-shadow: 0 0 25px rgba(59,130,246,0.3), 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .link-card:active { transform: translateY(0); }
+
+    .icono-wrap {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .icono-wrap {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .icono-wrap {
+        width: 58px;
+        height: 58px;
+        font-size: 1.6rem;
+      }
+    }
+
+    /* Colores solo de iconos, sin fondo */
+    .ic-spotify  { color: #1ED760; }
+    .ic-youtube  { color: #FF4444; }
+    .ic-ig       { color: #E1306C; }
+    .ic-facebook { color: #4F9EF8; }
+    .ic-nuevo    { color: #4ADE80; }
+    .ic-oracion  { color: #F87171; }
+    .ic-ofrenda  { color: #60A5FA; }
+    .ic-jovenes  { color: #C084FC; }
+    .ic-youversion { color: #FF6B35; }
+
+    .link-texto {
+      flex: 1;
+    }
+
+    .link-nombre {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .link-desc {
+      font-size: 0.75rem;
+      color: var(--color-texto-suave);
+      margin-top: 2px;
+    }
+
+    @media (min-width: 1024px) {
+      .link-nombre { font-size: 1.05rem; }
+      .link-desc { font-size: 0.85rem; }
+    }
+
+    @media (min-width: 1200px) {
+      .link-nombre { font-size: 1.15rem; }
+      .link-desc { font-size: 0.95rem; }
+    }
+
+    .link-flecha {
+      flex-shrink: 0;
+      color: var(--color-texto-suave);
+      font-size: 1rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .link-card:hover .link-flecha {
+      transform: translateX(4px);
+      color: var(--color-azul-claro);
+    }
+
+    /* ---- PIE ---- */
+    .pie {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--color-texto-suave);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 1024px) {
+      .pie {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .pie a {
+      color: var(--color-azul-claro);
+      text-decoration: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-cruz { animation: none; }
+      .evento-destacado { animation: none; }
+      .link-card { transition: none; }
+    }
+
+    /* =============================================
+       ESTILOS NUEVOS: TEMPORIZADOR Y ESTADOS
+    ============================================= */
+    .temporizador-estilo {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    .tiempo-caja {
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      border-radius: var(--radio-card);
+      padding: 8px 12px;
+      text-align: center;
+      min-width: 65px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .tiempo-numero {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--color-blanco);
+      display: block;
+      line-height: 1.1;
+    }
+    .tiempo-label {
+      font-size: 0.6rem;
+      color: var(--color-azul-claro);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+    .estado-badge {
+      font-size: 0.6rem;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-left: auto;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .estado-curso {
+      background: rgba(74, 222, 128, 0.15);
+      color: #4ADE80;
+      border: 1px solid #4ADE80;
+    }
+    .estado-transicion {
+      background: rgba(251, 191, 36, 0.15);
+      color: #FBBF24;
+      border: 1px solid #FBBF24;
+    }
+  </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+  <header class="cabecera">
+    <div class="logo-cruz">
+      <img src="logo.png" alt="Logo Gracia & Vida" style="width:100%; height:100%; object-fit:contain;" />
+    </div>
+
+    <div class="nombre-iglesia">
+      <h1>Gracia <span>&</span> Vida</h1>
+      <p class="subtitulo">Iglesia · Huechuraba</p>
+      <div class="separador"></div>
+    </div>
+  </header>
+
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      
+      <div class="carousel-slide slide-evento">
+        <span class="evento-badge">⚡ Próximo evento</span>
+        <h2 class="evento-titulo">Casa de Oración</h2>
+        <p class="evento-fecha">5 de Septiembre · 10:00 - 22:00</p>
+        <p class="evento-descripcion">Un día completo de intercesión, adoración y búsqueda de Dios. 6 bloques temáticos con propósito espiritual.</p>
+        
+        <div id="cuenta-regresiva" class="temporizador-estilo">
+          </div>
+
+        <div class="evento-bloques">
+          <div class="bloque-item">
+            <div class="bloque-hora">10:00-12:00</div>
+            <div class="bloque-nombre">Hambre por Dios y Consagración</div>
+          </div>
+          <div class="bloque-item">
+            <div class="bloque-hora">12:00-14:00</div>
+            <div class="bloque-nombre">Avivamiento y Espíritu Santo</div>
+          </div>
+          <div class="bloque-item">
+            <div class="bloque-hora">14:00-16:00</div>
+            <div class="bloque-nombre">Nuestra Iglesia y sus Líderes</div>
+          </div>
+          <div class="bloque-item">
+            <div class="bloque-hora">16:00-18:00</div>
+            <div class="bloque-nombre">Familias, Necesidades y Provisión</div>
+          </div>
+          <div class="bloque-item">
+            <div class="bloque-hora">18:00-20:00</div>
+            <div class="bloque-nombre">Salvación, Ciudad y Nación</div>
+          </div>
+          <div class="bloque-item">
+            <div class="bloque-hora">20:00-22:00</div>
+            <div class="bloque-nombre">Palabra, Misión y Expansión</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide slide-schedule">
+        <div class="schedule-card-carousel">
+          <div class="schedule-title">📅 Reuniones de la Semana</div>
+          
+          <div class="schedule-row" data-day="martes">
+            <div class="schedule-dia">Martes</div>
+            <div class="schedule-evento">Oración Matutina</div>
+            <div class="schedule-hora">08:00</div>
+          </div>
+          
+          <div class="schedule-row" data-day="martes">
+            <div class="schedule-dia"></div>
+            <div class="schedule-evento">Estudio Bíblico</div>
+            <div class="schedule-hora">20:00</div>
+          </div>
+          
+          <div class="schedule-row" data-day="miércoles">
+            <div class="schedule-dia">Miércoles</div>
+            <div class="schedule-evento">Intercesión</div>
+            <div class="schedule-hora">20:00</div>
+          </div>
+          
+          <div class="schedule-row" data-day="jueves">
+            <div class="schedule-dia">Jueves</div>
+            <div class="schedule-evento">Oración Matutina</div>
+            <div class="schedule-hora">08:00</div>
+          </div>
+          
+          <div class="schedule-row" data-day="jueves">
+            <div class="schedule-dia"></div>
+            <div class="schedule-evento">Alabanza & Oración</div>
+            <div class="schedule-hora">20:00</div>
+          </div>
+          
+          <div class="schedule-row" data-day="sábado">
+            <div class="schedule-dia">Sábado</div>
+            <div class="schedule-evento">Generación Juvenil</div>
+            <div class="schedule-hora">17:30</div>
+          </div>
+          
+          <div class="schedule-row" data-day="domingo">
+            <div class="schedule-dia">Domingo</div>
+            <div class="schedule-evento">Corazones Dispuestos</div>
+            <div class="schedule-hora">10:00</div>
+          </div>
+          
+          <div class="schedule-row" data-day="domingo">
+            <div class="schedule-dia"></div>
+            <div class="schedule-evento">Reunión General</div>
+            <div class="schedule-hora">10:30</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="carousel-indicators">
+      <button class="dot active" data-slide="0" aria-label="Ir a evento destacado"></button>
+      <button class="dot" data-slide="1" aria-label="Ir a reuniones semanales"></button>
+    </div>
+  </div>
+
+  <p class="seccion-titulo">📍 ¿Cómo Llegar?</p>
+
+  <div class="location-card">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.889!2d-70.5593!3d-33.3745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9629a1a1a1a1a1a1%3A0x1234567890abcdef!2sPedro%20Fontova%207492%2C%20Huechuraba!5e0!3m2!1ses!2scl!4v1693456789012" 
+      width="100%" 
+      height="280" 
+      style="border:0; border-radius: 10px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    
+    <div class="location-info">
+      <p style="color: var(--color-azul-claro); font-weight: 700; margin-bottom: 8px;">Gracia & Vida</p>
+      <p>Pedro Fontova 7492</p>
+      <p>Huechuraba, Santiago</p>
+    </div>
+    
+    <center>
+      <a href="https://maps.app.goo.gl/X1B42V2HqRagSYYw5" target="_blank" rel="noopener" class="btn-maps">
+        Abrir en Google Maps →
+      </a>
+    </center>
+  </div>
+
+  <p class="seccion-titulo">Comunidad</p>
+
+  <div class="links-lista">
+
+    <a class="link-card" href="https://www.youtube.com/@GRACIA_Y_VIDA_HUECHURABA" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-youtube">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">YouTube</div>
+        <div class="link-desc">Sermones, alabanza y más</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+    <a class="link-card" href="https://www.instagram.com/graciayvidahuechuraba.cl?igsh=cnpvMXlucm43aXhw" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-ig">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.2c1.2-.1 1.6-.1 4.8-.1zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12c0 3.3 0 3.7.1 4.9.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24c3.3 0 3.7 0 4.9-.1 4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9 0-3.3 0-3.7-.1-4.9-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4A6.2 6.2 0 0012 5.8zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">Instagram</div>
+        <div class="link-desc">Síguenos en Instagram</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+    <a class="link-card" href="https://www.facebook.com/share/18aqEVG3B1/" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">Facebook</div>
+        <div class="link-desc">Página oficial de la iglesia</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+    <a class="link-card" href="https://open.spotify.com/playlist/38sFbtGe1bW5tI4jdsbYHV?si=4_HRLQFpStafLVU_vmqBkg" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-spotify">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">Spotify</div>
+        <div class="link-desc">Playlist de alabanza</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+  </div>
+
+  <p class="seccion-titulo">Jóvenes</p>
+
+  <div class="links-lista">
+
+    <a class="link-card" href="https://www.instagram.com/gj.graciayvida?igsh=MXZrMWhobDBpbnVobQ==" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-jovenes">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.2c1.2-.1 1.6-.1 4.8-.1zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12c0 3.3 0 3.7.1 4.9.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24c3.3 0 3.7 0 4.9-.1 4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9 0-3.3 0-3.7-.1-4.9-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4A6.2 6.2 0 0012 5.8zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">Jóvenes — Instagram</div>
+        <div class="link-desc">Comunidad GJ Gracia & Vida</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+  </div>
+
+  <p class="seccion-titulo">Primeros pasos</p>
+
+  <div class="links-lista">
+
+    <a class="link-card" href="https://form.jotform.com/261258061202648" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-nuevo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">¿Eres nuevo?</div>
+        <div class="link-desc">Cuéntanos sobre ti y únete</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+  </div>
+
+  <p class="seccion-titulo">Intercesión</p>
+
+  <div class="links-lista">
+
+    <a class="link-card" href="https://docs.google.com/forms/d/1UCP_1vgFgGMFL2QSnV1nhkYwYe7S9mEPgV4MDkt9waY/viewform?edit_requested=true#responses" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-oracion">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">Necesitas oración</div>
+        <div class="link-desc">Comparte tu petición con la comunidad</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+  </div>
+
+  <div class="links-lista">
+
+    <a class="link-card" href="https://fintoc.me/gyvhuechuraba" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-ofrenda">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">Ofrenda / Diezmo</div>
+        <div class="link-desc">Apoya el ministerio con tu ofrenda</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+  </div>
+
+  <p class="seccion-titulo">Biblia & Estudio</p>
+
+  <div class="links-lista">
+
+    <a class="link-card" href="https://www.bible.com/organizations/706bf395-5e04-4e0c-b4c3-69cebb35e56a?utm_source=yvapp&utm_medium=share&utm_content=partner-profile" target="_blank" rel="noopener">
+      <div class="icono-wrap ic-youversion">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 16H5V4h14v14zM7 10h10v2H7z"/>
+        </svg>
+      </div>
+      <div class="link-texto">
+        <div class="link-nombre">Encuentra tu iglesia en YouVersion</div>
+        <div class="link-desc">Sigue a Gracia & Vida en la app Bíblica</div>
+      </div>
+      <span class="link-flecha">→</span>
+    </a>
+
+  </div>
+
+  <footer class="pie">
+    <p>Iglesia Gracia & Vida · Huechuraba, Santiago</p>
+    <p style="margin-top:6px;">Síguenos y forma parte de la comunidad</p>
+  </footer>
+
+</div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Scroll al top al cargar
+    window.scrollTo(0, 0);
+    // ===== CARRUSEL ROTATIVO MEJORADO =====
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    
+    let currentSlide = 0;
+    let autoRotateInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+    const isMobile = window.innerWidth < 1024;
+
+    function showSlide(n) {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev');
+        if (index === n) {
+          slide.classList.add('active');
+        } else if (index < n) {
+          slide.classList.add('prev');
+        }
+      });
+      
+      dots.forEach((dot, index) => {
+        dot.classList.remove('active');
+        if (index === n) dot.classList.add('active');
+      });
+      
+      currentSlide = n;
+    }
+
+    function nextSlide() {
+      showSlide((currentSlide + 1) % slides.length);
+    }
+
+    function prevSlide() {
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+
+    // Auto-rotate cada 7 segundos (solo en móvil)
+    function startAutoRotate() {
+      if (!isMobile) return;
+      autoRotateInterval = setInterval(nextSlide, 7000);
+    }
+
+    function stopAutoRotate() {
+      clearInterval(autoRotateInterval);
+    }
+
+    // Event listeners para dots (solo en móvil)
+    if (isMobile) {
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          stopAutoRotate();
+          showSlide(index);
+          startAutoRotate();
+        });
+      });
+    }
+
+    // Touch/Swipe para móvil SOLO
+    if (isMobile) {
+      let lastScrollTime = 0;
+
+      carouselWrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        isDragging = true;
+        stopAutoRotate();
+        lastScrollTime = Date.now();
+      }, { passive: true });
+
+      carouselWrapper.addEventListener('touchmove', (e) => {
+        // No prevenir por defecto, dejar que scroll natural funcione
+      }, { passive: true });
+
+      carouselWrapper.addEventListener('touchend', (e) => {
+        const touchEndXVal = e.changedTouches[0].clientX;
+        isDragging = false;
+        
+        const diff = touchStartX - touchEndXVal;
+        const swipeThreshold = 50;
+        const timeDiff = Date.now() - lastScrollTime;
+
+        // Solo registrar swipe si se hizo rápido y distancia suficiente
+        if (Math.abs(diff) > swipeThreshold && timeDiff < 500) {
+          e.preventDefault();
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+        
+        startAutoRotate();
+      }, { passive: false });
+
+      // Pausar al pasar mouse (móvil con touch)
+      carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
+      carouselWrapper.addEventListener('mouseleave', startAutoRotate);
+    }
+
+    // Iniciar (solo en móvil)
+    if (isMobile) {
+      showSlide(0);
+      startAutoRotate();
+    } else {
+      // Desktop: mostrar ambos slides
+      slides.forEach(slide => {
+        slide.classList.add('active');
+      });
+      dots.forEach(dot => dot.style.display = 'none');
+    }
+
+    // ===== DESTACAR DÍA ACTUAL EN REUNIONES =====
+    const dayMap = {
+      0: 'domingo',
+      1: 'lunes',
+      2: 'martes',
+      3: 'miércoles',
+      4: 'jueves',
+      5: 'viernes',
+      6: 'sábado'
+    };
+    
+    const today = new Date().getDay();
+    const todayName = dayMap[today];
+    
+    const scheduleRows = document.querySelectorAll('.schedule-row');
+    
+    scheduleRows.forEach(row => {
+      const rowDay = row.getAttribute('data-day');
+      
+      const normalizeText = (text) => {
+        return text
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+      };
+      
+      if (normalizeText(rowDay) === normalizeText(todayName)) {
+        row.classList.add('dia-actual');
+        
+        const diaElement = row.querySelector('.schedule-dia');
+        if (diaElement && diaElement.textContent.trim()) {
+          diaElement.textContent += ' (Hoy)';
+        }
+      }
+    });
+
+    // ========================================================
+    // NUEVO CÓDIGO: TEMPORIZADOR Y ESTADO DE BLOQUES A TIEMPO REAL
+    // ========================================================
+    function actualizarEvento() {
+      const ahora = new Date();
+      
+      // Ajustar al 5 de septiembre (Mes 8 porque en JS enero es 0) a las 10:00 am.
+      let añoEvento = ahora.getFullYear();
+      let fechaEvento = new Date(añoEvento, 8, 5, 10, 0, 0); 
+
+      // Si ya pasó el 5 de septiembre de este año, ajustar para el próximo (opcional)
+      if (ahora > new Date(añoEvento, 8, 6)) {
+        fechaEvento = new Date(añoEvento + 1, 8, 5, 10, 0, 0);
+      }
+
+      const diferencia = fechaEvento - ahora;
+      const containerTemporizador = document.getElementById('cuenta-regresiva');
+
+      // 1. Lógica del temporizador
+      if (diferencia > 0) {
+        // Aún no empieza
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        let htmlTemporizador = '';
+        if (dias > 0) {
+          htmlTemporizador += `<div class="tiempo-caja"><span class="tiempo-numero">${dias}</span><span class="tiempo-label">Días</span></div>`;
+        }
+        htmlTemporizador += `
+          <div class="tiempo-caja"><span class="tiempo-numero">${horas.toString().padStart(2, '0')}</span><span class="tiempo-label">Hrs</span></div>
+          <div class="tiempo-caja"><span class="tiempo-numero">${minutos.toString().padStart(2, '0')}</span><span class="tiempo-label">Min</span></div>
+          <div class="tiempo-caja"><span class="tiempo-numero">${segundos.toString().padStart(2, '0')}</span><span class="tiempo-label">Seg</span></div>
+        `;
+        if (containerTemporizador) containerTemporizador.innerHTML = htmlTemporizador;
+        
+      } else if (ahora < new Date(añoEvento, 8, 5, 22, 0, 0)) {
+        // Durante el evento (entre 10:00 y 22:00)
+        if (containerTemporizador) {
+          containerTemporizador.innerHTML = `
+            <div class="tiempo-caja" style="width: 100%; border-color: #4ADE80; background: rgba(74, 222, 128, 0.1);">
+              <span class="tiempo-numero" style="color: #4ADE80; font-size: 1.1rem; letter-spacing: 0.05em;">¡CASA DE ORACIÓN EN CURSO!</span>
+            </div>`;
+        }
+      } else {
+        // Evento finalizado
+        if (containerTemporizador) {
+          containerTemporizador.innerHTML = `
+            <div class="tiempo-caja" style="width: 100%;">
+              <span class="tiempo-numero" style="font-size: 1.1rem;">EVENTO FINALIZADO</span>
+            </div>`;
+        }
+      }
+
+      // 2. Lógica de los bloques y etiquetas ("En curso", "En transición")
+      // Verifica que sea el día exacto del evento (5 de septiembre)
+      const esDiaEvento = (ahora.getMonth() === 8 && ahora.getDate() === 5);
+      const bloques = document.querySelectorAll('.bloque-item');
+
+      bloques.forEach((bloque) => {
+        const textoHora = bloque.querySelector('.bloque-hora').innerText; 
+        const [horaInicio, horaFin] = textoHora.split('-');
+
+        const [hInicio, mInicio] = horaInicio.split(':').map(Number);
+        const [hFin, mFin] = horaFin.split(':').map(Number);
+
+        // Crear objetos fecha para la hora inicio y fin del bloque de HOY
+        const inicioBloque = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate(), hInicio, mInicio, 0);
+        const finBloque = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate(), hFin, mFin, 0);
+
+        // Buscar si ya insertamos la etiqueta (badge), si no la creamos
+        let badge = bloque.querySelector('.estado-badge');
+        if (!badge) {
+          badge = document.createElement('span');
+          bloque.appendChild(badge);
+          bloque.style.alignItems = 'center'; 
+        }
+
+        badge.className = 'estado-badge'; 
+        badge.style.display = 'none';
+
+        // Solo ejecutar el resaltado si estamos en el día del evento
+        if (esDiaEvento) {
+          if (ahora >= inicioBloque && ahora < finBloque) {
+            badge.style.display = 'inline-block';
+            
+            // Calculamos cuántos minutos faltan para que termine el bloque
+            const minutosRestantes = (finBloque - ahora) / (1000 * 60);
+
+            if (minutosRestantes <= 10) {
+              badge.innerText = 'En transición';
+              badge.classList.add('estado-transicion');
+              bloque.style.borderLeftColor = '#FBBF24'; // Naranja/Amarillo
+              bloque.style.background = 'rgba(251, 191, 36, 0.08)';
+            } else {
+              badge.innerText = 'En curso';
+              badge.classList.add('estado-curso');
+              bloque.style.borderLeftColor = '#4ADE80'; // Verde
+              bloque.style.background = 'rgba(74, 222, 128, 0.08)';
+            }
+          } else {
+            // Restaurar colores normales si el bloque ya pasó o no ha empezado
+            bloque.style.borderLeftColor = 'var(--color-azul-claro)';
+            bloque.style.background = 'rgba(37,99,235,0.08)';
+          }
+        }
+      });
+    }
+
+    // Ejecutar actualizarEvento una vez al cargar la página y luego cada 1 segundo (1000ms)
+    actualizarEvento();
+    setInterval(actualizarEvento, 1000);
+
+  });
+</script>
+
+</body>
+</html>
