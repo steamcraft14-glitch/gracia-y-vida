@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,1504 +10,366 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KS6WBH2L');</script>
 <!-- End Google Tag Manager -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-  <title>Gracia & Vida Huechuraba</title>
-  <link rel="icon" type="image/png" href="logo.png" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
-  <style>
-    /* =============================================
-       CONFIGURACIÓN FÁCIL DE EDITAR
-       Cambia los colores aquí y afectan todo el sitio
-    ============================================= */
-    :root {
-      --color-fondo:        #0B0F1E;
-      --color-fondo-card:   #111827;
-      --color-borde:        #1E3A8A;
-      --color-azul:         #2563EB;
-      --color-azul-claro:   #3B82F6;
-      --color-blanco:       #FFFFFF;
-      --color-texto-suave:  #94A3B8;
-      --color-evento:       #2563EB;
-      --font-principal:     'Montserrat', sans-serif;
-      --radio-card:         14px;
-      --max-ancho:          480px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      overflow-x: hidden;
-      width: 100%;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-principal);
-      background-color: var(--color-fondo);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 48px 20px 64px;
-      color: var(--color-blanco);
-      overflow-x: hidden;
-      width: 100%;
-      max-width: 100vw;
-    }
-
-    @media (min-width: 1024px) {
-      body {
-        padding: 48px 0 64px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      body {
-        padding: 60px 0 80px;
-      }
-    }
-
-    /* ---- FONDO ESTRELLADO SUTIL ---- */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 20% 10%, rgba(37,99,235,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(30,58,138,0.2) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .contenedor {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: var(--max-ancho);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      overflow-x: hidden;
-    }
-
-    @media (min-width: 1024px) {
-      .contenedor {
-        max-width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        padding: 0 40px;
-        align-items: start;
-        overflow-x: visible;
-      }
-    }
-
-    @media (min-width: 1400px) {
-      .contenedor {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 28px;
-        padding: 0 60px;
-      }
-    }
-
-    /* ---- LOGO / CABECERA ---- */
-    .cabecera {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 36px;
-    }
-
-    @media (min-width: 1024px) {
-      .cabecera {
-        grid-column: 1 / -1;
-        margin-bottom: 24px;
-      }
-    }
-
-    .logo-cruz {
-      width: 200px;
-      height: 200px;
-      position: relative;
-      animation: pulso 3s ease-in-out infinite;
-    }
-
-    @media (min-width: 1024px) {
-      .logo-cruz {
-        width: 240px;
-        height: 240px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .logo-cruz {
-        width: 280px;
-        height: 280px;
-      }
-    }
-
-    @keyframes pulso {
-      0%, 100% { transform: scale(1);   filter: drop-shadow(0 0 8px rgba(37,99,235,0.4)); }
-      50%        { transform: scale(1.05); filter: drop-shadow(0 0 18px rgba(59,130,246,0.7)); }
-    }
-
-    .logo-cruz svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .nombre-iglesia {
-      text-align: center;
-    }
-
-    .nombre-iglesia h1 {
-      font-size: 1.6rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      line-height: 1.15;
-    }
-
-    @media (min-width: 1024px) {
-      .nombre-iglesia h1 {
-        font-size: 2.2rem;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .nombre-iglesia h1 {
-        font-size: 2.8rem;
-      }
-    }
-
-    .nombre-iglesia h1 span {
-      color: var(--color-azul-claro);
-    }
-
-    .subtitulo {
-      font-size: 0.8rem;
-      color: var(--color-texto-suave);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-top: 6px;
-    }
-
-    .separador {
-      width: 48px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--color-azul), transparent);
-      margin: 20px auto 0;
-    }
-
-    /* ---- EVENTO DESTACADO ---- */
-    .evento-destacado {
-      width: 100%;
-      background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(37,99,235,0.05) 100%);
-      border: 2px solid var(--color-evento);
-      border-radius: var(--radio-card);
-      padding: 24px;
-      margin-bottom: 32px;
-      animation: pulso-evento 2.5s ease-in-out infinite;
-      position: relative;
-      overflow: hidden;
-    }
-
-    @keyframes pulso-evento {
-      0%, 100% {
-        border-color: var(--color-evento);
-        box-shadow: 0 0 15px rgba(37,99,235,0.2);
-      }
-      50% {
-        border-color: #60A5FA;
-        box-shadow: 0 0 25px rgba(37,99,235,0.4);
-      }
-    }
-
-    .evento-badge {
-      display: inline-block;
-      background: var(--color-evento);
-      color: var(--color-blanco);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .evento-titulo {
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: var(--color-blanco);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .evento-fecha {
-      font-size: 0.85rem;
-      color: var(--color-azul-claro);
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: 0.05em;
-    }
-
-    .evento-descripcion {
-      font-size: 0.8rem;
-      color: var(--color-texto-suave);
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
-    @media (min-width: 1024px) {
-      .evento-titulo {
-        font-size: 1.5rem;
-      }
-      .evento-fecha {
-        font-size: 0.95rem;
-      }
-      .evento-descripcion {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .evento-titulo {
-        font-size: 1.7rem;
-      }
-      .evento-fecha {
-        font-size: 1rem;
-      }
-      .evento-descripcion {
-        font-size: 1rem;
-      }
-    }
-
-    .evento-bloques {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .bloque-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 10px;
-      background: rgba(37,99,235,0.08);
-      border-radius: 8px;
-      border-left: 3px solid var(--color-azul-claro);
-      width: 100%;
-      transition: all 0.3s ease;
-    }
-
-    .bloque-hora {
-      flex-shrink: 0;
-      font-weight: 700;
-      color: var(--color-azul-claro);
-      font-size: 0.75rem;
-      min-width: 55px;
-    }
-
-    /* ---- CARRUSEL ROTATIVO ---- */
-    .carousel-container {
-      width: 100%;
-      margin-bottom: 32px;
-      position: relative;
-    }
-
-    @media (min-width: 1024px) {
-      .carousel-container {
-        grid-column: 1 / -1;
-        margin-bottom: 24px;
-      }
-    }
-
-    .carousel-wrapper {
-      width: 100%;
-      overflow: clip;
-      border-radius: var(--radio-card);
-      touch-action: pan-y pinch-zoom;
-      user-select: none;
-      cursor: grab;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      position: relative;
-      min-height: 420px;
-    }
-
-    .carousel-wrapper.grabbing {
-      cursor: grabbing;
-    }
-
-    .carousel-slide {
-      width: 100%;
-      max-width: 100%;
-      background: var(--color-fondo-card);
-      border: 2px solid var(--color-borde);
-      border-radius: var(--radio-card);
-      padding: 24px;
-      animation: destello-borde 3s ease-in-out infinite;
-      opacity: 0;
-      transform: translateX(100%);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      pointer-events: none;
-      position: absolute;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-
-    @media (min-width: 1024px) {
-      .carousel-slide {
-        padding: 32px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .carousel-slide {
-        padding: 40px;
-      }
-    }
-
-    .carousel-slide.active {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: auto;
-      position: relative;
-    }
-
-    .carousel-slide.prev {
-      transform: translateX(-100%);
-    }
-
-    .slide-evento.active {
-      background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(37,99,235,0.05) 100%);
-      border: 2px solid var(--color-azul-claro);
-      animation: pulso-evento 2.5s ease-in-out infinite;
-    }
-
-    .schedule-card-carousel {
-      width: 100%;
-    }
-
-    .schedule-card-carousel .schedule-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--color-azul-claro);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .schedule-card-carousel .schedule-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(30, 58, 138, 0.3);
-      font-size: 0.85rem;
-      transition: background 0.3s ease, border-left 0.3s ease;
-      padding-left: 12px;
-      margin-left: -12px;
-      margin-right: -12px;
-      padding-right: 12px;
-    }
-
-    .schedule-card-carousel .schedule-row:last-child {
-      border-bottom: none;
-    }
-
-    .schedule-card-carousel .schedule-row.dia-actual {
-      background: rgba(37, 99, 235, 0.15);
-      border-left: 4px solid var(--color-azul-claro);
-      padding-left: 8px;
-    }
-
-    /* Indicadores */
-    .carousel-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 2px solid var(--color-azul);
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      padding: 0;
-    }
-
-    .dot.active {
-      background: var(--color-azul-claro);
-      box-shadow: 0 0 10px rgba(59,130,246,0.5);
-    }
-
-    .dot:hover {
-      box-shadow: 0 0 8px rgba(59,130,246,0.3);
-    }
-
-    /* ---- RESPONSIVO DESKTOP ---- */
-    @media (min-width: 1024px) {
-      .carousel-wrapper {
-        flex-wrap: nowrap;
-        gap: 20px;
-        overflow: visible;
-        touch-action: auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .carousel-slide {
-        width: 100%;
-        opacity: 1;
-        transform: translateX(0);
-        pointer-events: auto;
-        position: relative;
-        transition: none;
-      }
-
-      .carousel-slide.active,
-      .carousel-slide.prev {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .carousel-indicators {
-        display: none;
-      }
-    }
-
-    @media (min-width: 1400px) {
-      .carousel-wrapper {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .bloque-nombre {
-      flex: 1;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--color-blanco);
-      line-height: 1.3;
-    }
-
-    /* ---- TARJETA DE HORARIOS ---- */
-    .schedule-card {
-      width: 100%;
-      background: var(--color-fondo-card);
-      border: 2px solid var(--color-borde);
-      border-radius: var(--radio-card);
-      padding: 20px;
-      margin-bottom: 32px;
-      animation: destello-borde 3s ease-in-out infinite;
-    }
-
-    @media (min-width: 1024px) {
-      .schedule-card {
-        padding: 28px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .schedule-card {
-        padding: 36px;
-      }
-    }
-
-    .schedule-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--color-azul-claro);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .schedule-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(30, 58, 138, 0.3);
-      font-size: 0.85rem;
-      transition: background 0.3s ease, border-left 0.3s ease;
-      padding-left: 12px;
-      margin-left: -12px;
-      margin-right: -12px;
-      padding-right: 12px;
-    }
-
-    @media (min-width: 1024px) {
-      .schedule-title {
-        font-size: 1.05rem;
-      }
-      .schedule-row {
-        font-size: 0.95rem;
-        padding: 16px 0;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .schedule-title {
-        font-size: 1.15rem;
-      }
-      .schedule-row {
-        font-size: 1rem;
-        padding: 18px 0;
-      }
-    }
-
-    .schedule-row:last-child {
-      border-bottom: none;
-    }
-
-    .schedule-row.dia-actual {
-      background: rgba(37, 99, 235, 0.15);
-      border-left: 4px solid var(--color-azul-claro);
-      padding-left: 8px;
-    }
-
-    .schedule-dia {
-      font-weight: 700;
-      color: var(--color-azul-claro);
-      min-width: 85px;
-    }
-
-    .schedule-row.dia-actual .schedule-dia {
-      color: var(--color-azul-claro);
-      text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
-    }
-
-    .schedule-evento {
-      flex: 1;
-      color: var(--color-texto-suave);
-      padding: 0 12px;
-      text-align: left;
-    }
-
-    .schedule-row.dia-actual .schedule-evento {
-      color: var(--color-blanco);
-      font-weight: 600;
-    }
-
-    .schedule-hora {
-      color: var(--color-texto-suave);
-      font-weight: 600;
-      min-width: 55px;
-      text-align: right;
-    }
-
-    .schedule-row.dia-actual .schedule-hora {
-      color: var(--color-azul-claro);
-      text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
-    }
-
-    /* ---- TARJETA DE UBICACIÓN / GOOGLE MAPS ---- */
-    .location-card {
-      width: 100%;
-      background: var(--color-fondo-card);
-      border: 2px solid var(--color-borde);
-      border-radius: var(--radio-card);
-      padding: 16px;
-      margin-bottom: 32px;
-      animation: destello-borde 3s ease-in-out infinite;
-      overflow: hidden;
-    }
-
-    @media (min-width: 1024px) {
-      .location-card {
-        grid-column: 1 / -1;
-      }
-    }
-
-    .location-card iframe {
-      display: block;
-      border-radius: 10px;
-      margin-bottom: 16px;
-    }
-
-    @media (min-width: 1024px) {
-      .location-card iframe {
-        height: 300px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .location-card iframe {
-        height: 350px;
-      }
-    }
-
-    .location-info {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .location-info p {
-      color: var(--color-texto-suave);
-      font-size: 0.9rem;
-      margin: 4px 0;
-    }
-
-    .location-info strong {
-      color: var(--color-blanco);
-    }
-
-    .btn-maps {
-      display: inline-block;
-      padding: 12px 24px;
-      background: linear-gradient(135deg, var(--color-azul-claro), var(--color-azul));
-      color: var(--color-blanco);
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-maps:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-    }
-
-    /* ---- SECCIÓN (agrupador opcional) ---- */
-    .seccion-titulo {
-      width: 100%;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--color-texto-suave);
-      margin: 40px 0 16px;
-      padding-left: 4px;
-    }
-
-    @media (min-width: 1024px) {
-      .seccion-titulo {
-        grid-column: 1 / -1;
-        margin: 24px 0 12px;
-      }
-    }
-
-    /* ---- CARDS DE LINKS ---- */
-    .links-lista {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 8px;
-    }
-
-    @media (min-width: 1024px) {
-      .links-lista {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 16px;
-      }
-    }
-
-    @media (min-width: 1400px) {
-      .links-lista {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .link-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      background: var(--color-fondo-card);
-      border: 2px solid var(--color-borde);
-      border-radius: var(--radio-card);
-      text-decoration: none;
-      color: var(--color-blanco);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      position: relative;
-      overflow: hidden;
-      animation: destello-borde 3s ease-in-out infinite;
-    }
-
-    @media (min-width: 1024px) {
-      .link-card {
-        padding: 20px 28px;
-        gap: 20px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .link-card {
-        padding: 24px 32px;
-        gap: 24px;
-      }
-    }
-
-    @keyframes destello-borde {
-      0%, 100% { border-color: var(--color-borde); box-shadow: none; }
-      50% { border-color: var(--color-azul-claro); box-shadow: 0 0 15px rgba(59,130,246,0.4), inset 0 0 15px rgba(59,130,246,0.1); }
-    }
-
-    .link-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(37,99,235,0.08) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .link-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(59,130,246,0.3), 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .link-card:active { transform: translateY(0); }
-
-    .icono-wrap {
-      flex-shrink: 0;
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-
-    @media (min-width: 1024px) {
-      .icono-wrap {
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .icono-wrap {
-        width: 58px;
-        height: 58px;
-        font-size: 1.6rem;
-      }
-    }
-
-    /* Colores solo de iconos, sin fondo */
-    .ic-spotify  { color: #1ED760; }
-    .ic-youtube  { color: #FF4444; }
-    .ic-ig       { color: #E1306C; }
-    .ic-facebook { color: #4F9EF8; }
-    .ic-nuevo    { color: #4ADE80; }
-    .ic-oracion  { color: #F87171; }
-    .ic-ofrenda  { color: #60A5FA; }
-    .ic-jovenes  { color: #C084FC; }
-    .ic-youversion { color: #FF6B35; }
-
-    .link-texto {
-      flex: 1;
-    }
-
-    .link-nombre {
-      font-size: 0.95rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .link-desc {
-      font-size: 0.75rem;
-      color: var(--color-texto-suave);
-      margin-top: 2px;
-    }
-
-    @media (min-width: 1024px) {
-      .link-nombre { font-size: 1.05rem; }
-      .link-desc { font-size: 0.85rem; }
-    }
-
-    @media (min-width: 1200px) {
-      .link-nombre { font-size: 1.15rem; }
-      .link-desc { font-size: 0.95rem; }
-    }
-
-    .link-flecha {
-      flex-shrink: 0;
-      color: var(--color-texto-suave);
-      font-size: 1rem;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    .link-card:hover .link-flecha {
-      transform: translateX(4px);
-      color: var(--color-azul-claro);
-    }
-
-    /* ---- PIE ---- */
-    .pie {
-      margin-top: 48px;
-      text-align: center;
-      font-size: 0.72rem;
-      color: var(--color-texto-suave);
-      line-height: 1.6;
-    }
-
-    @media (min-width: 1024px) {
-      .pie {
-        grid-column: 1 / -1;
-      }
-    }
-
-    .pie a {
-      color: var(--color-azul-claro);
-      text-decoration: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .logo-cruz { animation: none; }
-      .evento-destacado { animation: none; }
-      .link-card { transition: none; }
-    }
-
-    /* =============================================
-       ESTILOS NUEVOS: TEMPORIZADOR Y ESTADOS
-    ============================================= */
-    .temporizador-estilo {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-    }
-    .tiempo-caja {
-      background: rgba(37, 99, 235, 0.15);
-      border: 1px solid rgba(59, 130, 246, 0.5);
-      border-radius: var(--radio-card);
-      padding: 8px 12px;
-      text-align: center;
-      min-width: 65px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .tiempo-numero {
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: var(--color-blanco);
-      display: block;
-      line-height: 1.1;
-    }
-    .tiempo-label {
-      font-size: 0.6rem;
-      color: var(--color-azul-claro);
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-    }
-    .estado-badge {
-      font-size: 0.6rem;
-      font-weight: 800;
-      padding: 4px 8px;
-      border-radius: 6px;
-      margin-left: auto;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    .estado-curso {
-      background: rgba(74, 222, 128, 0.15);
-      color: #4ADE80;
-      border: 1px solid #4ADE80;
-    }
-    .estado-transicion {
-      background: rgba(251, 191, 36, 0.15);
-      color: #FBBF24;
-      border: 1px solid #FBBF24;
-    }
-  </style>
+<title>Gracia & Vida Huechuraba · Una iglesia para ti y los tuyos</title>
+<meta name="theme-color" content="#0B1437" />
+<meta name="description" content="Iglesia Gracia & Vida en Huechuraba, Santiago. Una iglesia para ti y los tuyos: horarios de reuniones, próximos eventos y cómo llegar." />
+<!-- Vista previa al compartir. AJUSTAR si la dirección final del sitio es otra -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_CL" />
+<meta property="og:site_name" content="Gracia & Vida Huechuraba" />
+<meta property="og:title" content="Gracia & Vida Huechuraba" />
+<meta property="og:description" content="Una iglesia para ti y los tuyos. Horarios, eventos y cómo llegar." />
+<meta property="og:url" content="https://steamcraft14-glitch.github.io/gracia-y-vida/" />
+<meta property="og:image" content="https://steamcraft14-glitch.github.io/gracia-y-vida/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="logo.png" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Church","name":"Gracia & Vida Huechuraba",
+ "address":{"@type":"PostalAddress","streetAddress":"Pedro Fontova 7492","addressLocality":"Huechuraba","addressRegion":"Región Metropolitana","addressCountry":"CL"},
+ "sameAs":["https://www.instagram.com/graciayvidahuechuraba.cl","https://www.facebook.com/share/18aqEVG3B1/","https://www.youtube.com/@GRACIA_Y_VIDA_HUECHURABA"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#0B1437; --navy2:#13205A; --azul:#2563EB; --azul-c:#60A5FA;
+  --papel:#F4F6FB; --tinta:#0B1437; --suave:#55607D; --linea:#DDE3F0;
+  --verde:#16A34A; --f:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--papel);color:var(--tinta);line-height:1.45;padding-bottom:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+.hero{background:radial-gradient(120% 90% at 80% 0%,#1E3A8A 0%,var(--navy) 60%);color:#fff;padding:36px 0 64px;border-radius:0 0 36px 36px}
+.logo-grande{display:block;width:min(300px,78vw);height:auto;margin:0 auto;filter:drop-shadow(0 0 22px rgba(59,130,246,.45))}
+.top{display:none}
+.hero h1{font-size:clamp(2.1rem,9vw,3.2rem);font-weight:900;line-height:1.05;margin:32px 0 12px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--azul-c)}
+.hero p.lead{color:#C7D4F7;max-width:34ch}
+.proxima{margin-top:28px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:18px 20px;backdrop-filter:blur(6px)}
+.proxima .et{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--azul-c)}
+.proxima .q{font-size:1.25rem;font-weight:800;margin:4px 0 2px}
+.proxima .cuando{color:#C7D4F7;font-size:.9rem}
+.reloj{display:flex;gap:8px;margin-top:14px}
+.reloj div{flex:1;text-align:center;background:rgba(0,0,0,.25);border-radius:12px;padding:8px 0}
+.reloj b{display:block;font-size:1.4rem;font-weight:900;font-variant-numeric:tabular-nums}
+.reloj small{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#AFC3F5;font-weight:700}
+.reloj [hidden]{display:none}
+
+/* SECCIONES */
+section{padding:44px 0 4px}
+.ey{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--azul)}
+h2{font-size:1.7rem;font-weight:900;line-height:1.1;margin:6px 0 18px;letter-spacing:-.01em}
+.sub{color:var(--suave);margin:-8px 0 18px}
+
+/* SEMANA */
+.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dia{background:#fff;border:2px solid var(--linea);border-radius:14px;padding:10px 0 8px;text-align:center;font:inherit;cursor:pointer;color:var(--tinta)}
+.dia span{display:block;font-size:.66rem;font-weight:700;color:var(--suave);text-transform:uppercase}
+.dia b{display:block;font-size:1.05rem;font-weight:900}
+.dia i{display:block;width:6px;height:6px;border-radius:50%;margin:4px auto 0;background:transparent}
+.dia.tiene i{background:var(--azul)}
+.dia.hoy{border-color:var(--azul-c)}
+.dia[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.dia[aria-pressed="true"] span{color:#AFC3F5}
+.dia[aria-pressed="true"].tiene i{background:var(--azul-c)}
+.detalle{margin-top:14px;background:#fff;border:2px solid var(--linea);border-radius:18px;padding:6px 18px;min-height:76px}
+.detalle h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--suave);padding:12px 0 2px}
+.reu{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--linea);font-weight:700}
+.reu:last-child{border:0}
+.reu time{color:var(--azul);font-variant-numeric:tabular-nums}
+.vacio{color:var(--suave);padding:14px 0;font-weight:600}
+
+/* EVENTO */
+.evento{background:var(--navy);color:#fff;border-radius:24px;padding:24px;position:relative;overflow:hidden}
+.evento::after{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(#2563EB66,transparent 70%)}
+.evento .ey{color:var(--azul-c)}
+.evento h2{color:#fff;margin-bottom:6px}
+.evento .fecha{color:#C7D4F7;font-weight:600}
+.pasos{list-style:none;margin-top:16px;display:grid;gap:8px}
+.pasos li{display:flex;gap:12px;font-size:.88rem;font-weight:600;background:rgba(255,255,255,.07);border-radius:12px;padding:10px 12px}
+.pasos time{color:var(--azul-c);min-width:88px;font-variant-numeric:tabular-nums}
+
+/* PRIMERA VISITA */
+.visita{list-style:none;counter-reset:p;display:grid;gap:14px}
+.visita li{counter-increment:p;background:#fff;border:2px solid var(--linea);border-radius:20px;padding:20px 20px 20px 72px;position:relative}
+.visita li::before{content:counter(p);position:absolute;left:18px;top:18px;width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}
+.visita h3{font-size:1.05rem;font-weight:800;margin-bottom:4px}
+.visita p{color:var(--suave);font-size:.9rem;margin-bottom:12px}
+.btn{display:inline-block;padding:11px 18px;border-radius:999px;background:var(--azul);color:#fff;text-decoration:none;font-weight:800;font-size:.85rem}
+.btn.sec{background:transparent;color:var(--azul);border:2px solid var(--azul)}
+.fila{display:flex;flex-wrap:wrap;gap:8px}
+
+/* CONECTA */
+.redes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.red{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;font-size:.72rem;font-weight:700;color:var(--suave)}
+.red span{width:100%;aspect-ratio:1;border-radius:20px;background:#fff;border:2px solid var(--linea);display:grid;place-items:center;transition:transform .2s}
+.red:hover span{transform:translateY(-3px)}
+.red svg{width:28px;height:28px;fill:currentColor}
+.mas{margin-top:14px;display:grid;gap:10px}
+.mas a{display:flex;justify-content:space-between;align-items:center;background:#fff;border:2px solid var(--linea);border-radius:16px;padding:14px 18px;text-decoration:none;font-weight:700;font-size:.92rem}
+.mas small{display:block;color:var(--suave);font-weight:600;font-size:.78rem}
+.mas i{font-style:normal;color:var(--azul)}
+
+/* DAR */
+.dar{background:linear-gradient(135deg,#2563EB,#1E3A8A);color:#fff;border-radius:24px;padding:24px}
+.dar h2{color:#fff;font-size:1.4rem;margin-bottom:6px}
+.dar p{color:#DCE6FF;margin-bottom:16px;font-size:.92rem}
+.dar .btn{background:#fff;color:var(--navy)}
+
+footer{text-align:center;color:var(--suave);font-size:.78rem;padding:44px 0 12px}
+
+@media(min-width:900px){
+  body{padding-bottom:0}
+  .wrap{max-width:1120px;padding:0 32px}
+
+  .top{display:block;position:sticky;top:0;z-index:30;background:rgba(11,20,55,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
+  .top .wrap{display:flex;justify-content:flex-end;align-items:center;gap:6px;height:64px}
+  .top a{color:#C7D4F7;text-decoration:none;font-weight:700;font-size:.88rem;padding:10px 16px;border-radius:999px;transition:background .2s,color .2s}
+  .top a:hover{background:rgba(255,255,255,.1);color:#fff}
+  .top a.cta{background:var(--azul);color:#fff;margin-left:8px}
+  .top a.cta:hover{background:#3B82F6}
+
+  .hero{padding:72px 0 110px;border-radius:0 0 56px 56px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+  .logo-grande{width:460px;margin:0 0 0 -8px}
+  .hero h1{font-size:3.6rem;margin-top:40px}
+  .hero p.lead{font-size:1.15rem;max-width:40ch}
+  .proxima{margin-top:0;padding:30px 32px;border-radius:28px}
+  .proxima .q{font-size:1.7rem}
+  .proxima .cuando{font-size:1.05rem}
+  .reloj{margin-top:22px;gap:12px}
+  .reloj b{font-size:2.2rem}
+  .reloj div{padding:14px 0;border-radius:16px}
+
+  section{padding:88px 0 0}
+  h2{font-size:2.4rem}
+  .sub{font-size:1.05rem}
+
+  .sem{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
+  .dias{gap:10px}
+  .dia{padding:16px 0 12px;border-radius:18px;transition:transform .15s,border-color .15s}
+  .dia:hover{transform:translateY(-2px);border-color:var(--azul-c)}
+  .dia span{font-size:.75rem}.dia b{font-size:1.4rem}
+  .detalle{margin-top:0;padding:10px 26px;border-radius:22px}
+  .reu{font-size:1.05rem;padding:16px 0}
+
+  .evento{padding:44px 48px;border-radius:32px;display:grid;grid-template-columns:1fr 1.1fr;gap:8px 56px;align-items:start}
+  .evento .pasos{margin-top:0;grid-column:2;grid-row:1/span 4}
+  .evento .pasos li{font-size:.95rem;padding:12px 16px}
+
+  .visita{grid-template-columns:repeat(3,1fr);gap:22px}
+  .visita li{padding:84px 26px 28px}
+  .visita li::before{left:26px;top:26px;width:44px;height:44px}
+  .visita h3{font-size:1.2rem}
+  .visita p{font-size:.95rem;min-height:3em}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .redes{gap:16px}
+  .mas{margin-top:0}
+  .red{font-size:.82rem}
+
+  .dar{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:40px 48px;border-radius:32px}
+  .dar h2{font-size:2rem}
+  .dar p{margin-bottom:0;font-size:1.05rem;max-width:52ch}
+  .dar .btn{white-space:nowrap;padding:16px 30px;font-size:1rem}
+
+  footer{padding:80px 0 40px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS6WBH2L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS6WBH2L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<div class="contenedor">
+<nav class="top" aria-label="Secciones"><div class="wrap">
+  <a href="#horarios">Horarios</a>
+  <a href="#visita">Primera visita</a>
+  <a href="#conecta">Comunidad</a>
+  <a href="#dar">Ofrendar</a>
+  <a class="cta" id="top-ruta" target="_blank" rel="noopener">📍 Cómo llegar</a>
+</div></nav>
 
-  <header class="cabecera">
-    <div class="logo-cruz">
-      <img src="logo.png" alt="Logo Gracia & Vida" style="width:100%; height:100%; object-fit:contain;" />
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <picture><source srcset="logo-h.webp" type="image/webp" /><img class="logo-grande" src="logo-h.png" alt="Gracia & Vida — Iglesia Huechuraba" width="760" height="326" fetchpriority="high" /></picture>
+      <h1>Una iglesia<br />para ti <em>y los tuyos</em>.</h1>
+      <p class="lead">Ven como estás. Te contamos cuándo nos reunimos, cómo llegar y qué hacer en tu primera visita.</p>
     </div>
 
-    <div class="nombre-iglesia">
-      <h1>Gracia <span>&</span> Vida</h1>
-      <p class="subtitulo">Iglesia · Huechuraba</p>
-      <div class="separador"></div>
-    </div>
-  </header>
-
-  <div class="carousel-container">
-    <div class="carousel-wrapper">
-      
-      <div class="carousel-slide slide-evento">
-        <span class="evento-badge">⚡ Próximo evento</span>
-        <h2 class="evento-titulo">Casa de Oración</h2>
-        <p class="evento-fecha">5 de Septiembre · 10:00 - 22:00</p>
-        <p class="evento-descripcion">Un día completo de intercesión, adoración y búsqueda de Dios. 6 bloques temáticos con propósito espiritual.</p>
-        
-        <div id="cuenta-regresiva" class="temporizador-estilo">
-          </div>
-
-        <div class="evento-bloques">
-          <div class="bloque-item">
-            <div class="bloque-hora">10:00-12:00</div>
-            <div class="bloque-nombre">Hambre por Dios y Consagración</div>
-          </div>
-          <div class="bloque-item">
-            <div class="bloque-hora">12:00-14:00</div>
-            <div class="bloque-nombre">Avivamiento y Espíritu Santo</div>
-          </div>
-          <div class="bloque-item">
-            <div class="bloque-hora">14:00-16:00</div>
-            <div class="bloque-nombre">Nuestra Iglesia y sus Líderes</div>
-          </div>
-          <div class="bloque-item">
-            <div class="bloque-hora">16:00-18:00</div>
-            <div class="bloque-nombre">Familias, Necesidades y Provisión</div>
-          </div>
-          <div class="bloque-item">
-            <div class="bloque-hora">18:00-20:00</div>
-            <div class="bloque-nombre">Salvación, Ciudad y Nación</div>
-          </div>
-          <div class="bloque-item">
-            <div class="bloque-hora">20:00-22:00</div>
-            <div class="bloque-nombre">Palabra, Misión y Expansión</div>
-          </div>
-        </div>
+    <div class="proxima" role="timer">
+      <div class="et">Próxima reunión</div>
+      <div class="q" id="pq">…</div>
+      <div class="cuando" id="pc"></div>
+      <div class="reloj" id="reloj" aria-hidden="true">
+        <div id="rd"><b>0</b><small>Días</small></div>
+        <div><b id="rh">00</b><small>Hrs</small></div>
+        <div><b id="rm">00</b><small>Min</small></div>
+        <div><b id="rs">00</b><small>Seg</small></div>
       </div>
-
-      <div class="carousel-slide slide-schedule">
-        <div class="schedule-card-carousel">
-          <div class="schedule-title">📅 Reuniones de la Semana</div>
-          
-          <div class="schedule-row" data-day="martes">
-            <div class="schedule-dia">Martes</div>
-            <div class="schedule-evento">Oración Matutina</div>
-            <div class="schedule-hora">08:00</div>
-          </div>
-          
-          <div class="schedule-row" data-day="martes">
-            <div class="schedule-dia"></div>
-            <div class="schedule-evento">Estudio Bíblico</div>
-            <div class="schedule-hora">20:00</div>
-          </div>
-          
-          <div class="schedule-row" data-day="miércoles">
-            <div class="schedule-dia">Miércoles</div>
-            <div class="schedule-evento">Intercesión</div>
-            <div class="schedule-hora">20:00</div>
-          </div>
-          
-          <div class="schedule-row" data-day="jueves">
-            <div class="schedule-dia">Jueves</div>
-            <div class="schedule-evento">Oración Matutina</div>
-            <div class="schedule-hora">08:00</div>
-          </div>
-          
-          <div class="schedule-row" data-day="jueves">
-            <div class="schedule-dia"></div>
-            <div class="schedule-evento">Alabanza & Oración</div>
-            <div class="schedule-hora">20:00</div>
-          </div>
-          
-          <div class="schedule-row" data-day="sábado">
-            <div class="schedule-dia">Sábado</div>
-            <div class="schedule-evento">Generación Juvenil</div>
-            <div class="schedule-hora">17:30</div>
-          </div>
-          
-          <div class="schedule-row" data-day="domingo">
-            <div class="schedule-dia">Domingo</div>
-            <div class="schedule-evento">Corazones Dispuestos</div>
-            <div class="schedule-hora">10:00</div>
-          </div>
-          
-          <div class="schedule-row" data-day="domingo">
-            <div class="schedule-dia"></div>
-            <div class="schedule-evento">Reunión General</div>
-            <div class="schedule-hora">10:30</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="carousel-indicators">
-      <button class="dot active" data-slide="0" aria-label="Ir a evento destacado"></button>
-      <button class="dot" data-slide="1" aria-label="Ir a reuniones semanales"></button>
     </div>
   </div>
+</header>
 
-  <p class="seccion-titulo">📍 ¿Cómo Llegar?</p>
+<main class="wrap">
 
-  <div class="location-card">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.889!2d-70.5593!3d-33.3745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9629a1a1a1a1a1a1%3A0x1234567890abcdef!2sPedro%20Fontova%207492%2C%20Huechuraba!5e0!3m2!1ses!2scl!4v1693456789012" 
-      width="100%" 
-      height="280" 
-      style="border:0; border-radius: 10px;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    
-    <div class="location-info">
-      <p style="color: var(--color-azul-claro); font-weight: 700; margin-bottom: 8px;">Gracia & Vida</p>
-      <p>Pedro Fontova 7492</p>
-      <p>Huechuraba, Santiago</p>
+  <section id="horarios">
+    <div class="ey">Horarios</div>
+    <h2>¿Cuándo nos reunimos?</h2>
+    <div class="sem">
+      <div class="dias" id="dias"></div>
+      <div class="detalle" id="detalle" aria-live="polite"></div>
     </div>
-    
-    <center>
-      <a href="https://maps.app.goo.gl/X1B42V2HqRagSYYw5" target="_blank" rel="noopener" class="btn-maps">
-        Abrir en Google Maps →
-      </a>
-    </center>
-  </div>
+  </section>
 
-  <p class="seccion-titulo">Comunidad</p>
+  <section id="evento" hidden>
+    <div class="evento">
+      <div class="ey">Próximo evento</div>
+      <h2 id="evt"></h2>
+      <div class="fecha" id="evf"></div>
+      <p id="evd" style="color:#C7D4F7;margin-top:10px;font-size:.92rem"></p>
+      <ul class="pasos" id="evb"></ul>
+    </div>
+  </section>
 
-  <div class="links-lista">
+  <section id="visita">
+    <div class="ey">Primera visita</div>
+    <h2>Tres pasos y ya estás aquí.</h2>
+    <ol class="visita">
+      <li>
+        <h3>Llega</h3>
+        <p id="dir"></p>
+        <div class="fila"><a class="btn" id="btnruta" target="_blank" rel="noopener">Cómo llegar</a><a class="btn sec" id="btnmaps" target="_blank" rel="noopener">Ver en Maps</a></div>
+      </li>
+      <li>
+        <h3>Preséntate</h3>
+        <p>Cuéntanos quién eres para recibirte como mereces.</p>
+        <a class="btn" id="btnnuevo" target="_blank" rel="noopener">Soy nuevo</a>
+      </li>
+      <li>
+        <h3>Conecta</h3>
+        <p>¿Necesitas que oremos por ti o tienes una duda?</p>
+        <div class="fila"><a class="btn" id="btnoracion" target="_blank" rel="noopener">Pedir oración</a></div>
+      </li>
+    </ol>
+  </section>
 
-    <a class="link-card" href="https://www.youtube.com/@GRACIA_Y_VIDA_HUECHURABA" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-youtube">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">YouTube</div>
-        <div class="link-desc">Sermones, alabanza y más</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
+  <section id="conecta">
+    <div class="ey">Comunidad</div>
+    <h2>Sigue en contacto.</h2>
+    <div class="cols">
+      <div class="redes" id="redes"></div>
+      <div class="mas" id="mas"></div>
+    </div>
+  </section>
 
-    <a class="link-card" href="https://www.instagram.com/graciayvidahuechuraba.cl?igsh=cnpvMXlucm43aXhw" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-ig">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.2c1.2-.1 1.6-.1 4.8-.1zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12c0 3.3 0 3.7.1 4.9.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24c3.3 0 3.7 0 4.9-.1 4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9 0-3.3 0-3.7-.1-4.9-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4A6.2 6.2 0 0012 5.8zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">Instagram</div>
-        <div class="link-desc">Síguenos en Instagram</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
+  <section id="dar">
+    <div class="dar">
+      <div><h2>Sembrar en la obra</h2>
+      <p>Tu ofrenda y diezmo sostienen el ministerio y la ayuda a nuestra comunidad.</p></div>
+      <a class="btn" id="btndar" target="_blank" rel="noopener">Ofrendar</a>
+    </div>
+  </section>
 
-    <a class="link-card" href="https://www.facebook.com/share/18aqEVG3B1/" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-facebook">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">Facebook</div>
-        <div class="link-desc">Página oficial de la iglesia</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
+  <footer>Iglesia Gracia &amp; Vida · Huechuraba, Santiago</footer>
+</main>
 
-    <a class="link-card" href="https://open.spotify.com/playlist/38sFbtGe1bW5tI4jdsbYHV?si=4_HRLQFpStafLVU_vmqBkg" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-spotify">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">Spotify</div>
-        <div class="link-desc">Playlist de alabanza</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
+<script src="config.js"></script>
+<script>
+(()=>{
+const C=CONFIG, I=C.iglesia;
+const D=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const L=['D','L','M','M','J','V','S'];
+const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const $=id=>document.getElementById(id), p2=n=>String(n).padStart(2,'0');
+const parse=(f,h)=>{const[y,m,d]=f.split('-').map(Number),[a,b]=h.split(':').map(Number);return new Date(y,m-1,d,a,b)};
 
-  </div>
+/* reloj Chile + ?ahora=... para pruebas */
+const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:C.zonaHoraria,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+const pared=()=>{const p=Object.fromEntries(fmt.formatToParts(new Date()).map(x=>[x.type,x.value]));return new Date(+p.year,+p.month-1,+p.day,+p.hour,+p.minute,+p.second)};
+const q=new URLSearchParams(location.search).get('ahora'), f=q?new Date(q):null;
+const off=f&&!isNaN(f)?f-pared():0, ahora=()=>new Date(pared().getTime()+off);
 
-  <p class="seccion-titulo">Jóvenes</p>
+/* próxima reunión */
+function siguiente(now){let best=null;
+  for(let o=0;o<=7;o++){const d=new Date(now.getFullYear(),now.getMonth(),now.getDate()+o);
+    for(const r of C.reuniones){if(r.dia!==d.getDay())continue;
+      const dt=parse(`${d.getFullYear()}-${p2(d.getMonth()+1)}-${p2(d.getDate())}`,r.hora);
+      if(dt>now&&(!best||dt<best.dt))best={r,dt,o};}}
+  return best}
+function tick(){
+  const now=ahora(), s=siguiente(now); if(!s)return;
+  $('pq').textContent=s.r.nombre;
+  $('pc').textContent=(s.o===0?'Hoy':s.o===1?'Mañana':D[s.dt.getDay()])+' · '+s.r.hora+' h';
+  let t=Math.floor((s.dt-now)/1000);const d=Math.floor(t/86400);t-=d*86400;
+  const h=Math.floor(t/3600);t-=h*3600;const m=Math.floor(t/60);
+  $('rd').hidden=d===0;$('rd').firstChild.textContent=d;
+  $('rh').textContent=p2(h);$('rm').textContent=p2(m);$('rs').textContent=p2(t-m*60);
+}
 
-  <div class="links-lista">
+/* semana interactiva */
+const hoy=ahora().getDay(); let sel=hoy;
+function pintarDias(){
+  const box=$('dias'); box.replaceChildren();
+  const base=ahora(), lunes=new Date(base.getFullYear(),base.getMonth(),base.getDate()-((base.getDay()+6)%7));
+  [1,2,3,4,5,6,0].forEach((d,i)=>{
+    const fecha=new Date(lunes.getFullYear(),lunes.getMonth(),lunes.getDate()+i);
+    const tiene=C.reuniones.some(r=>r.dia===d);
+    const b=document.createElement('button');
+    b.type='button';b.className='dia'+(tiene?' tiene':'')+(d===hoy?' hoy':'');
+    b.setAttribute('aria-pressed',String(d===sel));
+    b.setAttribute('aria-label',D[d]+' '+fecha.getDate()+(d===hoy?' (hoy)':''));
+    b.innerHTML=`<span>${D[d].slice(0,3)}</span><b>${fecha.getDate()}</b><i></i>`;
+    b.onclick=()=>{sel=d;pintarDias();pintarDetalle()};
+    box.append(b)});
+}
+function pintarDetalle(){
+  const box=$('detalle'),rs=C.reuniones.filter(r=>r.dia===sel).sort((a,b)=>a.hora.localeCompare(b.hora));
+  box.replaceChildren();
+  const h=document.createElement('h3');h.textContent=D[sel]+(sel===hoy?' · hoy':'');box.append(h);
+  if(!rs.length){const v=document.createElement('div');v.className='vacio';v.textContent='Sin reuniones este día.';box.append(v);return}
+  rs.forEach(r=>{const el=document.createElement('div');el.className='reu';
+    el.innerHTML='<span></span><time></time>';el.firstChild.textContent=r.nombre;el.lastChild.textContent=r.hora;box.append(el)})
+}
 
-    <a class="link-card" href="https://www.instagram.com/gj.graciayvida?igsh=MXZrMWhobDBpbnVobQ==" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-jovenes">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.2c1.2-.1 1.6-.1 4.8-.1zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12c0 3.3 0 3.7.1 4.9.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24c3.3 0 3.7 0 4.9-.1 4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9 0-3.3 0-3.7-.1-4.9-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4A6.2 6.2 0 0012 5.8zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">Jóvenes — Instagram</div>
-        <div class="link-desc">Comunidad GJ Gracia & Vida</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
+/* evento (solo si hay uno vigente) */
+const ev=C.eventos.map(e=>({...e,i:parse(e.fecha,e.inicio),f:parse(e.fecha,e.fin)})).filter(e=>e.f>ahora()).sort((a,b)=>a.i-b.i)[0];
+if(ev){$('evento').hidden=false;$('evt').textContent=ev.titulo;
+  $('evf').textContent=`${D[ev.i.getDay()]} ${ev.i.getDate()} de ${M[ev.i.getMonth()]} · ${ev.inicio} – ${ev.fin}`;
+  $('evd').textContent=ev.descripcion||'';
+  (ev.bloques||[]).forEach(b=>{const li=document.createElement('li');li.innerHTML='<time></time><span></span>';
+    li.firstChild.textContent=b.inicio+' – '+b.fin;li.lastChild.textContent=b.nombre;$('evb').append(li)})}
 
-  </div>
+/* enlaces desde config */
+const todos=C.secciones.flatMap(s=>s.links||[]), porNombre=n=>todos.find(l=>l.nombre.toLowerCase().includes(n));
+const dest=encodeURIComponent(I.direccion+', '+I.comuna);
+const ruta='https://www.google.com/maps/dir/?api=1&destination='+dest;
+$('dir').textContent=I.direccion+', '+I.comuna+'.';
+$('btnruta').href=ruta;$('top-ruta').href=ruta;$('btnmaps').href=I.mapsUrl;
+$('btnnuevo').href=porNombre('nuevo').url;$('btnoracion').href=porNombre('oración').url;$('btndar').href=porNombre('ofrenda').url;
+const ICON={youtube:'M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z',
+ instagram:'M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.2c1.2-.1 1.6-.1 4.8-.1zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12c0 3.3 0 3.7.1 4.9.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24c3.3 0 3.7 0 4.9-.1 4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9 0-3.3 0-3.7-.1-4.9-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4A6.2 6.2 0 0012 5.8zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z',
+ facebook:'M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z',
+ spotify:'M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z'};
+const com=C.secciones.find(s=>s.titulo==='Comunidad');
+com.links.forEach(l=>{const a=document.createElement('a');a.className='red';a.href=l.url;a.target='_blank';a.rel='noopener';
+  a.innerHTML=`<span style="color:${l.color}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICON[l.icono]}"/></svg></span>`+l.nombre;$('redes').append(a)});
+[porNombre('jóvenes'),porNombre('youversion')].forEach(l=>{if(!l)return;const a=document.createElement('a');a.href=l.url;a.target='_blank';a.rel='noopener';
+  a.innerHTML='<div><span></span><small></small></div><i>→</i>';a.querySelector('span').textContent=l.nombre;a.querySelector('small').textContent=l.desc;$('mas').append(a)});
 
-  <p class="seccion-titulo">Primeros pasos</p>
+/* medición de clics (Google Tag Manager) */
+document.addEventListener('click',e=>{const a=e.target.closest('a.btn,a.red,.mas a,a.cta');if(!a)return;
+  (window.dataLayer=window.dataLayer||[]).push({event:'click_enlace',etiqueta:(a.textContent||'').trim().slice(0,60),url:a.href||''})});
 
-  <div class="links-lista">
-
-    <a class="link-card" href="https://form.jotform.com/261258061202648" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-nuevo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">¿Eres nuevo?</div>
-        <div class="link-desc">Cuéntanos sobre ti y únete</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
-
-  </div>
-
-  <p class="seccion-titulo">Intercesión</p>
-
-  <div class="links-lista">
-
-    <a class="link-card" href="https://docs.google.com/forms/d/1UCP_1vgFgGMFL2QSnV1nhkYwYe7S9mEPgV4MDkt9waY/viewform?edit_requested=true#responses" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-oracion">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">Necesitas oración</div>
-        <div class="link-desc">Comparte tu petición con la comunidad</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
-
-  </div>
-
-  <div class="links-lista">
-
-    <a class="link-card" href="https://fintoc.me/gyvhuechuraba" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-ofrenda">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">Ofrenda / Diezmo</div>
-        <div class="link-desc">Apoya el ministerio con tu ofrenda</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
-
-  </div>
-
-  <p class="seccion-titulo">Biblia & Estudio</p>
-
-  <div class="links-lista">
-
-    <a class="link-card" href="https://www.bible.com/organizations/706bf395-5e04-4e0c-b4c3-69cebb35e56a?utm_source=yvapp&utm_medium=share&utm_content=partner-profile" target="_blank" rel="noopener">
-      <div class="icono-wrap ic-youversion">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 16H5V4h14v14zM7 10h10v2H7z"/>
-        </svg>
-      </div>
-      <div class="link-texto">
-        <div class="link-nombre">Encuentra tu iglesia en YouVersion</div>
-        <div class="link-desc">Sigue a Gracia & Vida en la app Bíblica</div>
-      </div>
-      <span class="link-flecha">→</span>
-    </a>
-
-  </div>
-
-  <footer class="pie">
-    <p>Iglesia Gracia & Vida · Huechuraba, Santiago</p>
-    <p style="margin-top:6px;">Síguenos y forma parte de la comunidad</p>
-  </footer>
-
-</div>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Scroll al top al cargar
-    window.scrollTo(0, 0);
-    // ===== CARRUSEL ROTATIVO MEJORADO =====
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
-    
-    let currentSlide = 0;
-    let autoRotateInterval;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    let isDragging = false;
-    const isMobile = window.innerWidth < 1024;
-
-    function showSlide(n) {
-      slides.forEach((slide, index) => {
-        slide.classList.remove('active', 'prev');
-        if (index === n) {
-          slide.classList.add('active');
-        } else if (index < n) {
-          slide.classList.add('prev');
-        }
-      });
-      
-      dots.forEach((dot, index) => {
-        dot.classList.remove('active');
-        if (index === n) dot.classList.add('active');
-      });
-      
-      currentSlide = n;
-    }
-
-    function nextSlide() {
-      showSlide((currentSlide + 1) % slides.length);
-    }
-
-    function prevSlide() {
-      showSlide((currentSlide - 1 + slides.length) % slides.length);
-    }
-
-    // Auto-rotate cada 7 segundos (solo en móvil)
-    function startAutoRotate() {
-      if (!isMobile) return;
-      autoRotateInterval = setInterval(nextSlide, 7000);
-    }
-
-    function stopAutoRotate() {
-      clearInterval(autoRotateInterval);
-    }
-
-    // Event listeners para dots (solo en móvil)
-    if (isMobile) {
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          stopAutoRotate();
-          showSlide(index);
-          startAutoRotate();
-        });
-      });
-    }
-
-    // Touch/Swipe para móvil SOLO
-    if (isMobile) {
-      let lastScrollTime = 0;
-
-      carouselWrapper.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        isDragging = true;
-        stopAutoRotate();
-        lastScrollTime = Date.now();
-      }, { passive: true });
-
-      carouselWrapper.addEventListener('touchmove', (e) => {
-        // No prevenir por defecto, dejar que scroll natural funcione
-      }, { passive: true });
-
-      carouselWrapper.addEventListener('touchend', (e) => {
-        const touchEndXVal = e.changedTouches[0].clientX;
-        isDragging = false;
-        
-        const diff = touchStartX - touchEndXVal;
-        const swipeThreshold = 50;
-        const timeDiff = Date.now() - lastScrollTime;
-
-        // Solo registrar swipe si se hizo rápido y distancia suficiente
-        if (Math.abs(diff) > swipeThreshold && timeDiff < 500) {
-          e.preventDefault();
-          if (diff > 0) {
-            nextSlide();
-          } else {
-            prevSlide();
-          }
-        }
-        
-        startAutoRotate();
-      }, { passive: false });
-
-      // Pausar al pasar mouse (móvil con touch)
-      carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
-      carouselWrapper.addEventListener('mouseleave', startAutoRotate);
-    }
-
-    // Iniciar (solo en móvil)
-    if (isMobile) {
-      showSlide(0);
-      startAutoRotate();
-    } else {
-      // Desktop: mostrar ambos slides
-      slides.forEach(slide => {
-        slide.classList.add('active');
-      });
-      dots.forEach(dot => dot.style.display = 'none');
-    }
-
-    // ===== DESTACAR DÍA ACTUAL EN REUNIONES =====
-    const dayMap = {
-      0: 'domingo',
-      1: 'lunes',
-      2: 'martes',
-      3: 'miércoles',
-      4: 'jueves',
-      5: 'viernes',
-      6: 'sábado'
-    };
-    
-    const today = new Date().getDay();
-    const todayName = dayMap[today];
-    
-    const scheduleRows = document.querySelectorAll('.schedule-row');
-    
-    scheduleRows.forEach(row => {
-      const rowDay = row.getAttribute('data-day');
-      
-      const normalizeText = (text) => {
-        return text
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '');
-      };
-      
-      if (normalizeText(rowDay) === normalizeText(todayName)) {
-        row.classList.add('dia-actual');
-        
-        const diaElement = row.querySelector('.schedule-dia');
-        if (diaElement && diaElement.textContent.trim()) {
-          diaElement.textContent += ' (Hoy)';
-        }
-      }
-    });
-
-    // ========================================================
-    // NUEVO CÓDIGO: TEMPORIZADOR Y ESTADO DE BLOQUES A TIEMPO REAL
-    // ========================================================
-    function actualizarEvento() {
-      const ahora = new Date();
-      
-      // Ajustar al 5 de septiembre (Mes 8 porque en JS enero es 0) a las 10:00 am.
-      let añoEvento = ahora.getFullYear();
-      let fechaEvento = new Date(añoEvento, 8, 5, 10, 0, 0); 
-
-      // Si ya pasó el 5 de septiembre de este año, ajustar para el próximo (opcional)
-      if (ahora > new Date(añoEvento, 8, 6)) {
-        fechaEvento = new Date(añoEvento + 1, 8, 5, 10, 0, 0);
-      }
-
-      const diferencia = fechaEvento - ahora;
-      const containerTemporizador = document.getElementById('cuenta-regresiva');
-
-      // 1. Lógica del temporizador
-      if (diferencia > 0) {
-        // Aún no empieza
-        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-        let htmlTemporizador = '';
-        if (dias > 0) {
-          htmlTemporizador += `<div class="tiempo-caja"><span class="tiempo-numero">${dias}</span><span class="tiempo-label">Días</span></div>`;
-        }
-        htmlTemporizador += `
-          <div class="tiempo-caja"><span class="tiempo-numero">${horas.toString().padStart(2, '0')}</span><span class="tiempo-label">Hrs</span></div>
-          <div class="tiempo-caja"><span class="tiempo-numero">${minutos.toString().padStart(2, '0')}</span><span class="tiempo-label">Min</span></div>
-          <div class="tiempo-caja"><span class="tiempo-numero">${segundos.toString().padStart(2, '0')}</span><span class="tiempo-label">Seg</span></div>
-        `;
-        if (containerTemporizador) containerTemporizador.innerHTML = htmlTemporizador;
-        
-      } else if (ahora < new Date(añoEvento, 8, 5, 22, 0, 0)) {
-        // Durante el evento (entre 10:00 y 22:00)
-        if (containerTemporizador) {
-          containerTemporizador.innerHTML = `
-            <div class="tiempo-caja" style="width: 100%; border-color: #4ADE80; background: rgba(74, 222, 128, 0.1);">
-              <span class="tiempo-numero" style="color: #4ADE80; font-size: 1.1rem; letter-spacing: 0.05em;">¡CASA DE ORACIÓN EN CURSO!</span>
-            </div>`;
-        }
-      } else {
-        // Evento finalizado
-        if (containerTemporizador) {
-          containerTemporizador.innerHTML = `
-            <div class="tiempo-caja" style="width: 100%;">
-              <span class="tiempo-numero" style="font-size: 1.1rem;">EVENTO FINALIZADO</span>
-            </div>`;
-        }
-      }
-
-      // 2. Lógica de los bloques y etiquetas ("En curso", "En transición")
-      // Verifica que sea el día exacto del evento (5 de septiembre)
-      const esDiaEvento = (ahora.getMonth() === 8 && ahora.getDate() === 5);
-      const bloques = document.querySelectorAll('.bloque-item');
-
-      bloques.forEach((bloque) => {
-        const textoHora = bloque.querySelector('.bloque-hora').innerText; 
-        const [horaInicio, horaFin] = textoHora.split('-');
-
-        const [hInicio, mInicio] = horaInicio.split(':').map(Number);
-        const [hFin, mFin] = horaFin.split(':').map(Number);
-
-        // Crear objetos fecha para la hora inicio y fin del bloque de HOY
-        const inicioBloque = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate(), hInicio, mInicio, 0);
-        const finBloque = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate(), hFin, mFin, 0);
-
-        // Buscar si ya insertamos la etiqueta (badge), si no la creamos
-        let badge = bloque.querySelector('.estado-badge');
-        if (!badge) {
-          badge = document.createElement('span');
-          bloque.appendChild(badge);
-          bloque.style.alignItems = 'center'; 
-        }
-
-        badge.className = 'estado-badge'; 
-        badge.style.display = 'none';
-
-        // Solo ejecutar el resaltado si estamos en el día del evento
-        if (esDiaEvento) {
-          if (ahora >= inicioBloque && ahora < finBloque) {
-            badge.style.display = 'inline-block';
-            
-            // Calculamos cuántos minutos faltan para que termine el bloque
-            const minutosRestantes = (finBloque - ahora) / (1000 * 60);
-
-            if (minutosRestantes <= 10) {
-              badge.innerText = 'En transición';
-              badge.classList.add('estado-transicion');
-              bloque.style.borderLeftColor = '#FBBF24'; // Naranja/Amarillo
-              bloque.style.background = 'rgba(251, 191, 36, 0.08)';
-            } else {
-              badge.innerText = 'En curso';
-              badge.classList.add('estado-curso');
-              bloque.style.borderLeftColor = '#4ADE80'; // Verde
-              bloque.style.background = 'rgba(74, 222, 128, 0.08)';
-            }
-          } else {
-            // Restaurar colores normales si el bloque ya pasó o no ha empezado
-            bloque.style.borderLeftColor = 'var(--color-azul-claro)';
-            bloque.style.background = 'rgba(37,99,235,0.08)';
-          }
-        }
-      });
-    }
-
-    // Ejecutar actualizarEvento una vez al cargar la página y luego cada 1 segundo (1000ms)
-    actualizarEvento();
-    setInterval(actualizarEvento, 1000);
-
-  });
+pintarDias();pintarDetalle();tick();setInterval(tick,1000);
+})();
 </script>
-
 </body>
 </html>
