@@ -16,4 +16,4 @@ Conviene abrirlo con un servidor (`python -m http.server`) o directamente en Git
 `index.html` (diseño y lógica) · `config.js` (datos) · `logo-h.webp/png` (logo de portada) · `logo.png`, `favicon.png`, `og-image.jpg` (íconos y vista previa al compartir).
 
 ## Por ajustar
-Las URLs `og:url` y `og:image` de `index.html` asumen `https://steamcraft14-glitch.github.io/gracia-y-vida/`.
+Las URLs `og:url` y `og:image` de `index.html` usan `https://gracia-vida.vercel.app/`.

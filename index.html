@@ -10,6 +10,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KS6WBH2L');</script>
 <!-- End Google Tag Manager -->
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVWF066PNY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-PVWF066PNY');</script>
 <title>Gracia & Vida Huechuraba · Una iglesia para ti y los tuyos</title>
 <meta name="theme-color" content="#0B1437" />
 <meta name="description" content="Iglesia Gracia & Vida en Huechuraba, Santiago. Una iglesia para ti y los tuyos: horarios de reuniones, próximos eventos y cómo llegar." />
@@ -19,8 +22,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:site_name" content="Gracia & Vida Huechuraba" />
 <meta property="og:title" content="Gracia & Vida Huechuraba" />
 <meta property="og:description" content="Una iglesia para ti y los tuyos. Horarios, eventos y cómo llegar." />
-<meta property="og:url" content="https://steamcraft14-glitch.github.io/gracia-y-vida/" />
-<meta property="og:image" content="https://steamcraft14-glitch.github.io/gracia-y-vida/og-image.jpg" />
+<meta property="og:url" content="https://gracia-vida.vercel.app/" />
+<meta property="og:image" content="https://gracia-vida.vercel.app/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="logo.png" />
@@ -366,7 +369,7 @@ com.links.forEach(l=>{const a=document.createElement('a');a.className='red';a.hr
 
 /* medición de clics (Google Tag Manager) */
 document.addEventListener('click',e=>{const a=e.target.closest('a.btn,a.red,.mas a,a.cta');if(!a)return;
-  (window.dataLayer=window.dataLayer||[]).push({event:'click_enlace',etiqueta:(a.textContent||'').trim().slice(0,60),url:a.href||''})});
+  if(window.gtag)gtag('event','click_enlace',{etiqueta:(a.textContent||'').trim().slice(0,60),url:a.href||''})});
 
 pintarDias();pintarDetalle();tick();setInterval(tick,1000);
 })();
